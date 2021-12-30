@@ -10,7 +10,7 @@ import (
 
 /* MongoCN es la funcion que realiza la conexion  al db */
 var MongoCN = ConectDB()
-var clientOptions = options.Client().ApplyURI("mongodb+srv://user_free_cluster:nY44JpMfo8scKqJR@cluster0.o1qf0.mongodb.net/curso_go?retryWrites=true&w=majority")
+var clientOptions = options.Client().ApplyURI("")
 
 /* ConectDB() es la funcion que realiza la conexion  al db */
 func ConectDB() *mongo.Client {
