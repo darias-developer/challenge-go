@@ -18,7 +18,7 @@ func FindUserByEmail(email string) (model.UserModel, bool, string) {
 
 	defer cancel()
 
-	db := config.MongoCN.Database("curso_go")
+	db := config.ConectDB().Database("curso_go")
 	collection := db.Collection("user")
 
 	condition := bson.M{"email": email}
@@ -42,7 +42,7 @@ func CreateUser(userModel model.UserModel) (string, bool, error) {
 
 	defer cancel()
 
-	db := config.MongoCN.Database("curso_go")
+	db := config.ConectDB().Database("curso_go")
 	collection := db.Collection("user")
 
 	encryptedPassword, err := middleware.EncryptPassword(userModel.Password)
